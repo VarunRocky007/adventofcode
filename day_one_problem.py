@@ -16,7 +16,6 @@ for calibration_input in list_of_calibration_inputs:
     for character_index in range(0,len(inputs)):
         if inputs[character_index].isdigit():
             first_value = inputs[character_index]
-            inputs[character_index] = ""
             temp_number_word = []
             break
         else:
@@ -28,7 +27,6 @@ for calibration_input in list_of_calibration_inputs:
                     inputs[character_index] = ""
                     temp_number_word = []
                     break
-        inputs[character_index] = ""
         if first_value != "":
             break
     second_value = ""
@@ -50,7 +48,4 @@ for calibration_input in list_of_calibration_inputs:
             break
     print("".join(inputs)+" "+first_value +" " + second_value+",")
     calibration_points.append(int(first_value + second_value))
-print(calibration_points)
-for point in calibration_points:
-    sum_of_points += point
-print(sum_of_points)
+print(sum(calibration_points))
